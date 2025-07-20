@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META TAGS: Essential information about the webpage -->
+    <meta charset="UTF-8"> <!-- Character encoding for proper text display -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes site responsive on mobile -->
+    <title>Instagram</title> <!-- Browser tab title -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <!-- MAIN CONTAINER: Holds all page content -->
+    <div class="container">
+        <!-- LEFT SIDE: Phone mockup with Instagram interface -->
+        <div class="phone-mockup">
+            <!-- Phone frame (outer border) -->
+            <div class="phone-frame">
+                <!-- Phone screen (inner content area) -->
+                <div class="phone-screen">
+                    <!-- App header with Instagram title -->
+                    <div class="phone-header">Instagram</div>
+
+                    <!-- Main content area where posts appear -->
+                    <div class="phone-content">
+                        <!-- POST 1: First Instagram post (visible by default) -->
+                        <div class="instagram-post active">
+                            <!-- Post header with profile info -->
+                            <div class="post-header">
+                                <div class="profile-pic"></div> <!-- Profile picture -->
+                                <div>
+                                    <div style="font-weight: 600; font-size: 14px;">username</div>
+                                </div>
+                            </div>
+                            <!-- Main image area (gradient background) -->
+                            <div class="post-image-area"></div>
+                            <!-- Action buttons (like, comment, share) -->
+                            <div class="post-actions">
+                                <span>❤️</span> <!-- Like button -->
+                                <span>💬</span> <!-- Comment button -->
+                                <span>📤</span> <!-- Share button -->
+                            </div>
+                        </div>
+
+                        <!-- POST 2: Second Instagram post (hidden initially) -->
+                        <div class="instagram-post">
+                            <div class="post-header">
+                                <!-- Different colored profile pic -->
+                                <div class="profile-pic" style="background: linear-gradient(45deg, #ff6b6b, #feca57);"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 14px;">another_user</div>
+                                </div>
+                            </div>
+                            <!-- Different colored background -->
+                            <div class="post-image-area" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);"></div>
+                            <div class="post-actions">
+                                <span>❤️</span>
+                                <span>💬</span>
+                                <span>📤</span>
+                            </div>
+                        </div>
+
+                        <!-- POST 3: Third Instagram post (hidden initially) -->
+                        <div class="instagram-post">
+                            <div class="post-header">
+                                <!-- Blue gradient profile pic -->
+                                <div class="profile-pic" style="background: linear-gradient(45deg, #48cae4, #023e8a);"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 14px;">cool_account</div>
+                                </div>
+                            </div>
+                            <!-- Blue gradient background -->
+                            <div class="post-image-area" style="background: linear-gradient(135deg, #48cae4 0%, #023e8a 100%);"></div>
+                            <div class="post-actions">
+                                <span>❤️</span>
+                                <span>💬</span>
+                                <span>📤</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLOATING DECORATIVE ICONS: Animated background elements -->
+            <div class="floating-icons">
+                <!-- Camera icon -->
+                <div class="floating-icon" style="top: 10%; left: 20%; animation-delay: 0s;">📷</div>
+                <!-- Heart icon -->
+                <div class="floating-icon" style="top: 60%; left: 80%; animation-delay: 2s;">❤️</div>
+                <!-- Comment icon -->
+                <div class="floating-icon" style="top: 30%; left: 70%; animation-delay: 4s;">💬</div>
+                <!-- Fire icon -->
+                <div class="floating-icon" style="top: 80%; left: 10%; animation-delay: 1s;">🔥</div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: Login form section -->
+        <div class="form-section">
+            <!-- Main login container -->
+            <div class="login-box">
+                <!-- Instagram logo text -->
+                <div class="instagram-logo">Instagram</div>
+
+                <!-- Login form -->
+                <form id="loginForm">
+                    <!-- Username/email input -->
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Phone number, username, or email" required>
+                    </div>
+                    <!-- Password input -->
+                    <div class="form-group">
+                        <input type="password" class="form-input" placeholder="Password" required>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="login-btn">Log in</button>
+                </form>
+
+                <!-- OR divider -->
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Facebook login alternative -->
+                <a href="#" class="facebook-login">
+                    <span style="color: #1877f2; font-size: 16px;">📘</span>
+                    Log in with Facebook
+                </a>
+
+                <!-- Forgot password link -->
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <!-- Sign up box -->
+            <div class="signup-box">
+                Don't have an account? <a href="#" class="signup-link">Sign up</a>
+            </div>
+
+            <!-- App download section -->
+            <div class="app-download">
+                <div class="download-text">Get the app.</div>
+                <div class="download-buttons">
+                    <!-- App Store button (SVG placeholder) -->
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 135 40'><rect width='135' height='40' rx='7' fill='%23000'/><text x='67.5' y='20' text-anchor='middle' fill='white' font-family='Arial' font-size='8'>App Store</text></svg>" alt="Download on App Store" class="download-btn">
+                    <!-- Google Play button (SVG placeholder) -->
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 135 40'><rect width='135' height='40' rx='7' fill='%23000'/><text x='67.5' y='20' text-anchor='middle' fill='white' font-family='Arial' font-size='8'>Google Play</text></svg>" alt="Get it on Google Play" class="download-btn">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

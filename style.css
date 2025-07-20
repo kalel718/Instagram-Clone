@@ -1,0 +1,360 @@
+/* CSS RESET: Removes default browser styling for consistent appearance */
+* {
+    margin: 0;          /* Removes default spacing around elements */
+    padding: 0;         /* Removes default inner spacing */
+    box-sizing: border-box; /* Makes width/height include padding and borders */
+}
+
+/* BODY STYLING: Main page background and layout setup */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Instagram's font stack */
+    background: #fafafa;    /* Light gray background like Instagram */
+    min-height: 100vh;      /* Full viewport height minimum */
+    display: flex;          /* Flexbox for centering content */
+    align-items: center;    /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+/* MAIN CONTAINER: Holds both phone mockup and login form */
+.container {
+    max-width: 935px;   /* Maximum width to match Instagram's layout */
+    width: 100%;        /* Full width up to max-width */
+    padding: 0 20px;    /* Side padding for mobile spacing */
+    display: flex;      /* Side-by-side layout */
+    align-items: center; /* Vertical alignment */
+    gap: 32px;          /* Space between phone and form */
+}
+
+/* PHONE MOCKUP SECTION: Left side visual element */
+.phone-mockup {
+    flex: 1;            /* Takes available space */
+    max-width: 454px;   /* Limits phone size */
+    position: relative; /* For positioning floating icons */
+}
+
+/* PHONE FRAME: Creates the phone border using SVG background */
+.phone-frame {
+    /* SVG background creates a realistic phone frame with rounded corners */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 454 618"><rect width="454" height="618" rx="35" fill="%23262626"/><rect x="6" y="6" width="442" height="606" rx="29" fill="%23000"/></svg>') no-repeat center;
+    background-size: contain; /* Scales SVG to fit */
+    width: 454px;
+    height: 618px;
+    position: relative;
+}
+
+/* PHONE SCREEN: The inner screen area of the phone */
+.phone-screen {
+    position: absolute;  /* Positioned within phone frame */
+    top: 27px;          /* Offset from top of frame */
+    left: 27px;         /* Offset from left of frame */
+    width: 250px;       /* Screen width */
+    height: 541px;      /* Screen height */
+    background: white;   /* White background like app */
+    border-radius: 20px; /* Rounded corners for modern look */
+    overflow: hidden;    /* Hides content that goes outside */
+    display: flex;       /* Vertical layout */
+    flex-direction: column;
+}
+
+/* PHONE HEADER: Top bar of the Instagram app */
+.phone-header {
+    height: 44px;           /* Fixed header height */
+    background: white;      /* White background */
+    display: flex;          /* Flexbox for centering */
+    align-items: center;    /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    border-bottom: 1px solid #dbdbdb; /* Bottom border like Instagram */
+    font-weight: 600;       /* Bold text */
+    font-size: 16px;        /* Text size */
+}
+
+/* PHONE CONTENT: Main area where Instagram posts appear */
+.phone-content {
+    flex: 1;            /* Takes remaining space */
+    background: white;   /* White background */
+    position: relative;  /* For absolute positioning of posts */
+    overflow: hidden;    /* Hides overflow */
+}
+
+/* INSTAGRAM POST: Individual post styling */
+.instagram-post {
+    position: absolute;  /* Stacked on top of each other */
+    width: 100%;        /* Full width */
+    height: 100%;       /* Full height */
+    background: white;   /* White background */
+    display: flex;       /* Vertical layout */
+    flex-direction: column;
+    opacity: 0;         /* Hidden by default */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade transition */
+}
+
+/* ACTIVE POST: Currently visible post */
+.instagram-post.active {
+    opacity: 1;         /* Fully visible */
+}
+
+/* POST HEADER: Top section with profile info */
+.post-header {
+    padding: 14px 16px;    /* Inner spacing */
+    display: flex;         /* Horizontal layout */
+    align-items: center;   /* Vertical alignment */
+    gap: 12px;            /* Space between profile pic and name */
+    border-bottom: 1px solid #efefef; /* Bottom border */
+}
+
+/* PROFILE PICTURE: Circular profile image with gradient */
+.profile-pic {
+    width: 32px;        /* Circle width */
+    height: 32px;       /* Circle height */
+    border-radius: 50%; /* Makes it circular */
+    /* Instagram's story gradient colors */
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* POST IMAGE AREA: Main content area of the post */
+.post-image-area {
+    flex: 1;            /* Takes remaining space */
+    /* Gradient background simulating an image */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+/* POST ACTIONS: Like, comment, share buttons */
+.post-actions {
+    padding: 8px 16px;     /* Inner spacing */
+    display: flex;         /* Horizontal layout */
+    gap: 16px;            /* Space between icons */
+    align-items: center;   /* Vertical alignment */
+}
+
+/* FORM SECTION: Right side with login form */
+.form-section {
+    flex: 1;            /* Takes available space */
+    max-width: 350px;   /* Limits form width */
+}
+
+/* LOGIN BOX: Main container for login form */
+.login-box {
+    background: white;      /* White background */
+    border: 1px solid #dbdbdb; /* Light gray border */
+    padding: 40px 40px 20px; /* Inner spacing */
+    text-align: center;     /* Center-aligned text */
+    margin-bottom: 10px;    /* Space below */
+}
+
+/* INSTAGRAM LOGO: Styled text logo */
+.instagram-logo {
+    font-size: 51px;       /* Large text */
+    font-weight: 300;      /* Light weight */
+    font-family: 'Brush Script MT', cursive; /* Script font */
+    /* Instagram's gradient colors applied to text */
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text; /* Clips background to text */
+    -webkit-text-fill-color: transparent; /* Makes text transparent to show gradient */
+    background-clip: text;
+    margin-bottom: 32px;    /* Space below */
+    letter-spacing: -2px;   /* Tighter letter spacing */
+}
+
+/* FORM GROUP: Container for each input field */
+.form-group {
+    margin-bottom: 6px;     /* Space between inputs */
+}
+
+/* FORM INPUT: Styling for text inputs */
+.form-input {
+    width: 100%;           /* Full width */
+    padding: 9px 8px 7px;  /* Inner spacing */
+    background: #fafafa;   /* Light gray background */
+    border: 1px solid #dbdbdb; /* Light border */
+    border-radius: 3px;    /* Slightly rounded corners */
+    font-size: 12px;       /* Text size */
+    outline: none;         /* Removes default focus outline */
+    transition: border-color 0.2s; /* Smooth border color change */
+}
+
+/* INPUT FOCUS STATE: When user clicks on input */
+.form-input:focus {
+    border-color: #a8a8a8; /* Darker border when focused */
+}
+
+/* LOGIN BUTTON: Main action button */
+.login-btn {
+    width: 100%;           /* Full width */
+    background: #0095f6;   /* Instagram blue */
+    color: white;          /* White text */
+    border: none;          /* No border */
+    border-radius: 4px;    /* Rounded corners */
+    padding: 7px 16px;     /* Inner spacing */
+    font-size: 14px;       /* Text size */
+    font-weight: 600;      /* Bold text */
+    cursor: pointer;       /* Hand cursor on hover */
+    margin: 8px 0 16px;    /* Vertical spacing */
+    transition: all 0.2s;  /* Smooth transitions */
+}
+
+/* BUTTON HOVER EFFECT: When mouse hovers over button */
+.login-btn:hover {
+    background: #1877f2;   /* Darker blue */
+    transform: translateY(-1px); /* Slight upward movement */
+}
+
+/* BUTTON ACTIVE STATE: When button is clicked */
+.login-btn:active {
+    transform: translateY(0); /* Returns to normal position */
+}
+
+/* DIVIDER: "OR" separator line */
+.divider {
+    position: relative;     /* For positioning line */
+    margin: 20px 0;        /* Vertical spacing */
+    color: #8e8e8e;        /* Gray text */
+    font-size: 13px;       /* Small text */
+    font-weight: 600;      /* Bold text */
+}
+
+/* DIVIDER LINE: Horizontal line behind "OR" text */
+.divider::before {
+    content: '';           /* Empty content for line */
+    position: absolute;    /* Positioned behind text */
+    top: 50%;             /* Vertically centered */
+    left: 0;              /* Full width */
+    right: 0;
+    height: 1px;          /* Thin line */
+    background: #dbdbdb;   /* Light gray color */
+}
+
+/* DIVIDER TEXT: "OR" text with background */
+.divider span {
+    background: white;     /* White background to cover line */
+    padding: 0 18px;      /* Horizontal padding */
+}
+
+/* FACEBOOK LOGIN LINK: Alternative login option */
+.facebook-login {
+    display: flex;         /* Horizontal layout */
+    align-items: center;   /* Vertical alignment */
+    justify-content: center; /* Horizontal centering */
+    gap: 8px;             /* Space between icon and text */
+    color: #385185;       /* Facebook blue */
+    text-decoration: none; /* No underline */
+    font-size: 14px;      /* Text size */
+    font-weight: 600;     /* Bold text */
+    margin-bottom: 20px;  /* Space below */
+    transition: opacity 0.2s; /* Smooth opacity change */
+}
+
+/* FACEBOOK LINK HOVER: Hover effect */
+.facebook-login:hover {
+    opacity: 0.7;         /* Slightly transparent */
+}
+
+/* FORGOT PASSWORD LINK: Small link at bottom */
+.forgot-password {
+    color: #00376b;       /* Dark blue */
+    font-size: 12px;      /* Small text */
+    text-decoration: none; /* No underline */
+}
+
+/* FORGOT PASSWORD HOVER: Hover effect */
+.forgot-password:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* SIGNUP BOX: Box below login form */
+.signup-box {
+    background: white;     /* White background */
+    border: 1px solid #dbdbdb; /* Light border */
+    padding: 20px;        /* Inner spacing */
+    text-align: center;   /* Centered text */
+    font-size: 14px;      /* Text size */
+}
+
+/* SIGNUP LINK: Link to registration */
+.signup-link {
+    color: #0095f6;       /* Instagram blue */
+    font-weight: 600;     /* Bold text */
+    text-decoration: none; /* No underline */
+}
+
+/* SIGNUP LINK HOVER: Hover effect */
+.signup-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* APP DOWNLOAD SECTION: Bottom section with app store links */
+.app-download {
+    text-align: center;   /* Centered content */
+    margin: 20px 0;      /* Vertical spacing */
+}
+
+/* DOWNLOAD TEXT: "Get the app" text */
+.download-text {
+    font-size: 14px;      /* Text size */
+    margin-bottom: 16px;  /* Space below */
+}
+
+/* DOWNLOAD BUTTONS CONTAINER: Holds app store buttons */
+.download-buttons {
+    display: flex;        /* Horizontal layout */
+    gap: 8px;            /* Space between buttons */
+    justify-content: center; /* Center alignment */
+}
+
+/* DOWNLOAD BUTTON: Individual app store button */
+.download-btn {
+    height: 40px;         /* Fixed height */
+    transition: transform 0.2s; /* Smooth scaling */
+}
+
+/* DOWNLOAD BUTTON HOVER: Hover effect */
+.download-btn:hover {
+    transform: scale(1.05); /* Slightly larger */
+}
+
+/* RESPONSIVE DESIGN: Tablet and smaller screens */
+@media (max-width: 875px) {
+    .container {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px;             /* Smaller gap */
+    }
+
+    .phone-mockup {
+        display: none;         /* Hide phone on smaller screens */
+    }
+}
+
+/* MOBILE RESPONSIVE: Phone screens */
+@media (max-width: 450px) {
+    .login-box {
+        padding: 40px 20px 20px; /* Less horizontal padding */
+        border: none;             /* Remove border */
+        background: transparent;   /* Transparent background */
+    }
+}
+
+/* FLOATING ICONS CONTAINER: Decorative animated icons */
+.floating-icons {
+    position: absolute;    /* Positioned over phone */
+    width: 100%;          /* Full width */
+    height: 100%;         /* Full height */
+    overflow: hidden;     /* Hide overflow */
+    pointer-events: none; /* Don't interfere with clicks */
+}
+
+/* INDIVIDUAL FLOATING ICON: Each animated icon */
+.floating-icon {
+    position: absolute;    /* Positioned individually */
+    opacity: 0.1;         /* Very transparent */
+    animation: float 6s ease-in-out infinite; /* Floating animation */
+}
+
+/* FLOATING ANIMATION: Up and down movement with rotation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);     /* Start/end position */
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg); /* Middle position */
+    }
+}
